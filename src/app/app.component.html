@@ -29,6 +29,7 @@
 
 
 
+
 <!-- <h1>Event in Angular</h1>
 <button class="btn" name="login" (click)="handleEvent($event)">ClickEvent</button>
 <br>
@@ -54,7 +55,7 @@ name="user"> -->
 
 
 
-<h1> Get Set Value of input field</h1>
+<!-- <h1> Get Set Value of input field</h1>
 <h1>User Name is : {{displayName}}</h1>
 <input  (input)="getName($event)" value="{{name}}" type="text" placeholder="Enter user name ">
 
@@ -69,4 +70,28 @@ name="user"> -->
 
 <input type="text" placeholder="enter your email" #emailField>
 <button>Get Mail</button>
-<button> Set Mail</button>
+<button> Set Mail</button> -->
+
+
+
+
+<h1> Routing Demo</h1>
+
+<ul>
+   
+         <li><a routerLink="/about"> About </a></li>
+
+         <li><a routerLink="/products/4">Products</a></li>
+
+         <li><a routerLink="/services">Service</a></li>
+   
+</ul>
+<!-- <app-about></app-about>
+<app-products></app-products>
+<app-services></app-services> -->
+<router-outlet></router-outlet> 
+
+<footer> 
+    <h1> Footer Components </h1>
+
+</footer>

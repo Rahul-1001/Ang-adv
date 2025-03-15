@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { SignupComponent } from './signup/signup.component';
-import { RegisterComponent } from "./register/register.component";
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SignupComponent, RegisterComponent],
+  imports: [
+    RouterOutlet,RouterModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -53,25 +55,28 @@ export class AppComponent {
 
 
 
-name=""
-displayName=""
-email=""
-getName(event:Event)
-{
-  // const val=(event.target as HTMLInputElement).value
-  this.name=(event.target as HTMLInputElement).value
-  // console.log(val)
-  // this.name=val
-}
-showName()
-{
-  this.displayName=this.name 
-}
+// name=""
+// displayName=""
+// email=""
+// getName(event:Event)
+// {
+//   // const val=(event.target as HTMLInputElement).value
+//   this.name=(event.target as HTMLInputElement).value
+//   // console.log(val)
+//   // this.name=val
+// }
+// showName()
+// {
+//   this.displayName=this.name 
+// }
 
-setName()
-{
-  this.name="rah"
-}
+// setName()
+// {
+//   this.name="rah"
+// }
+
+
+
 
 
 }
