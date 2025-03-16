@@ -75,8 +75,8 @@ name="user"> -->
 
 
 
-<h1> Routing Demo</h1>
-
+<!-- <h1> Routing Demo</h1> -->
+<!-- 
 <ul>
    
          <li><a routerLink="/about"> About </a></li>
@@ -85,13 +85,109 @@ name="user"> -->
 
          <li><a routerLink="/services">Service</a></li>
    
-</ul>
+</ul> -->
 <!-- <app-about></app-about>
 <app-products></app-products>
 <app-services></app-services> -->
-<router-outlet></router-outlet> 
+<!-- <router-outlet></router-outlet> 
 
 <footer> 
     <h1> Footer Components </h1>
 
-</footer>
+</footer> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1> State in Angular</h1>
+
+<h2>{{name}}</h2>
+
+<button (click)="changeName()">Change the name</button>  -->
+
+
+
+
+
+
+
+    <!-- <h1>{{products[0].name}}</h1>
+    <br>
+    <h2>{{products[0].price}}</h2>
+    <br>  -->
+
+
+     <!-- @if(product.isAvailable==true){
+
+        <p>Available</p> 
+
+    }
+    @else {
+
+        <p>Not Available</p>    
+
+    }
+   -->
+
+
+
+  
+                                      <!-- FOR LOOP -->
+                                       
+<!-- if id is not there track on the basis of index  ; track $index -->
+
+
+
+<div class="products">
+
+    @for(product of products ; track product.id )       
+   
+   
+   
+   
+    {
+         <div class="product">
+             <h2>Index{{$index}}</h2>
+             <h2>Even{{$even}}</h2>
+             <h1>{{product.name}}</h1>
+             <h2>{{product.price}}</h2>
+             <h3>{{product.quantity}}</h3>
+
+
+            @if(product.quantity==0)
+            {
+                <p class="circle red">  🚀 OOPS OUT OF STOCK  </p>
+            }
+
+           
+ 
+         </div>
+ 
+    }
+  
+
+
+
+</div>
+
+  
+
+
+
+        
+
+
+
