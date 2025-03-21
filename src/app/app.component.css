@@ -54,3 +54,28 @@ button {
 
     background-color: red;
   } */
+
+
+  .form{
+    width: 25%;
+    padding: 20px;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .inp{
+    height: 30px;
+    text-indent: 20px;
+
+
+  }
+
+  button{
+    padding: 8px;
+  }
+
+  .error{
+    color: red;
+  }

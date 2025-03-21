@@ -10,18 +10,15 @@
 
 
 
-<!-- <h1>Counter App</h1>
+<h1>Counter App</h1>
 <div>
-    <h2>{{count}}</h2>
+    <h2>{{ count }}</h2>
     <div>
         <button (click)="handleDecrement()">Decrement</button>
-        <button (click)="handleReset()" >Reset</button>
-
-        <button  (click)="handleIncrement()">Increment</button>
-
+        <button (click)="handleReset()">Reset</button>
+        <button (click)="handleIncrement()">Increment</button>
     </div>
-</div> -->
-
+</div>
 
 
 
@@ -112,6 +109,10 @@ name="user"> -->
 
 
 
+
+
+
+
 <!-- <h1> State in Angular</h1>
 
 <h2>{{name}}</h2>
@@ -144,6 +145,16 @@ name="user"> -->
 
 
 
+
+
+
+
+
+
+
+
+
+
   
                                       <!-- FOR LOOP -->
                                        
@@ -151,7 +162,7 @@ name="user"> -->
 
 
 
-<div class="products">
+<!-- <div class="products">
 
     @for(product of products ; track product.id )       
    
@@ -181,13 +192,170 @@ name="user"> -->
 
 
 
-</div>
+</div> -->
 
   
 
 
+                           <!-- FORMS     -->
 
-        
+<!-- <h1> Create product form </h1>
+
+<form class="form" [formGroup]="productForm">
+
+   <input  class="inp" type="text" placeholder="enter  product name " [formControl]="name">
+    @if(name.status=="INVALID" && name.touched==true)
+{
+    @if(name.errors?.['required']!==undefined)
+    {
+          <p class="error ">Name is required</p>
+    }
+    @else if(name.errors?.['minlength']!==undefined)
+    {
+        <p class="error"> Required length is {{name.errors?.['minlength']['required']}} </p>
+    }
+}
+   <input class="inp" type="number"  placeholder="enter product price " [formControl]="price"> 
+
+   <input  class="inp" type="text" placeholder="enter  product category" [formControl]="category"> 
+
+
+   <input class="inp" type="date" placeholder="Enter Product Date" [formControl]="dateControl" [max]="today">
 
 
 
+   <button type="click" (click)="submitForm()">Create </button>
+
+</form> -->
+
+
+
+
+
+
+
+
+
+              <!-- <H1>event in angular</H1> -->
+
+<!-- <button class="btn" name="login" (click)="handleEvent($event)">clicked event</button> -->
+<!-- 
+<div 
+ (click)="handleEvent($event)" 
+   style="background-color: goldenrod;
+     height: 200px;
+     width: 200px;"> 
+</div>
+
+<div 
+ (mouseenter)="handleEvent($event)" 
+   style="background-color: green;
+     height: 200px;
+     width: 200px;">
+</div>
+
+<div 
+ (mouseleave)="handleEvent($event)" 
+   style="background-color: blue;
+     height: 200px;
+     width: 200px;">
+</div> -->
+
+<!-- <input 
+  type="text"
+  (input)="handleEvent($event)"
+    (focus)="handleEvent($event)"
+
+  name="user"> -->
+
+
+
+
+
+
+                     <!-- ################################# -->
+
+
+  <!-- <h1> GET AND SET VALUE </h1> -->
+  <!-- <h1> {{namee}}</h1> -->
+  <!-- <h2>{{displayName}}</h2> -->
+  <!-- <input type="text" (input)="getName($event)" value="{{namee}}" placeholder="enter your name "> -->
+  <!-- <br>
+  <br>
+    <button (click)="showName()"> Get Name</button>
+    <button (click)="setName()"> Set Name</button> -->
+
+
+
+                           <!-- ########################### -->
+
+<h1> Form template driven</h1>
+<!-- instead of loginForm.value write loginForm.controls -->
+<form #loginForm="ngForm" (ngSubmit)=userLogin(loginForm.controls)>
+<!-- ng model to bind form and input -->
+ <!-- name field is mandatory in input field -->
+<input type="text" 
+required  
+minlength="3"
+maxlength="20" 
+placeholder="Enter your name"
+ #name="ngModel"
+  name="name" ngModel>
+
+
+
+  @if (name.invalid && (name.dirty || name.touched)) {
+    @if (name.errors?.['required']) {
+      <div>Name is required.</div>
+    }
+    @if (name.errors?.['minlength']) {
+      <div>Name must be at least 3 characters long.</div>
+    }
+    @if (name.errors?.['maxlength']) {
+      <div>Name cannot be more than 20 characters long.</div>
+    }
+  }
+  
+<!-- reactive form -->
+
+<br> <br>
+
+<input type="password" 
+   required
+   id="password"
+    name="password"
+    #password="ngModel"
+    minlength="4"
+placeholder="Enter your password" name="password" ngModel>
+
+
+@if (password.invalid && (password.dirty || password.touched)) {
+  @if (password.errors?.['required']) {
+    <div>Password is required.</div>
+  }
+  @if (password.errors?.['minlength']) {
+    <div>Password must be at least 6 characters long.</div>
+  }
+}
+<br> <br>
+
+
+<!-- 
+<input
+      type="date"
+      id="date"
+      name="date"
+      required
+      #date="ngModel"
+      ngModel
+      > -->
+
+<br> <br>
+
+
+
+<button type="submit" [disabled]="loginForm.invalid">Login </button>
+</form>
+
+
+<!-- <button (click)=userLogin(loginForm.value)>outside login </button> -->
